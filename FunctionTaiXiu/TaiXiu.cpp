@@ -4,7 +4,9 @@
 #include <cstdlib>
 #include <ctime>
 #include <random>
+#include <Windows.h>
 using namespace std;
+HANDLE hconsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
 //Tạo Định Nghĩa Cho Mỗi Chuỗi = static và cố định định nghĩa = enum
 static enum TaiXiuValue
@@ -49,6 +51,7 @@ int main(int argc, char* argv[]) //argc cho biết tham số đã nhập kể c�
 	while (true)
 	{
 		//Nhận tham số người dùng nhập
+		SetConsoleTextAttribute(hconsole, 2);
 		cout << "-----------"<<endl;
 		KichHoat();
 		cout << "Lua chon: Tai/Xiu/Doan/Thoat" << endl;
